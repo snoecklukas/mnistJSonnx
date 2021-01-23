@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Digit predict</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+  </head>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+    <script src="script/index.js"></script>
+
+    <h1>Upload image</h1>
+
+    <div class="text-center">
+      <p>Please upload a number [0-9].</p>
+      <form enctype="multipart/form-data" method="post" action="/home/upload">
+        <input type="file" name="file" id="image_upload" accept="image/png" />
+        <br />
+        <br />
+        <img id="image_preview" src="#" alt="your image" />
+      </form>
+      <br />
+      <p id="prediction" class="h1">?</p>
+      <div>
+        <pre id="scores"></pre>
+      </div>
+      <button id="clearArea_upload" class="btn btn-secondary">Clear</button>
+      <button id="check_upload" class="btn btn-success">Check</button>
+    </div>
+
+    <canvas id="canvas"></canvas>
+  </body>
+</html>
